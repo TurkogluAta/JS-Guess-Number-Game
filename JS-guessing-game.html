@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page title</title>
+    <link rel="stylesheet" href="formStyles.css">
+    <script type="text/javascript">
+        function playagain() {
+            let x = Math.floor((Math.random() * 10) + 1); // this is for random number
+            let correctGuess = false;
+
+            for (let y = 1; y <= 3; y++) { // this is for loop
+                var guess = parseInt(prompt("Enter a guess number 1-10")); // this is for input
+
+                if (x == guess) {
+                    correctGuess = true;
+                    break; // Exit loop if guessed correctly
+                } else if (x < guess) {
+                    alert("You guessed too high, sorry!"); // alert for high guess
+                } else if (x > guess) {
+                    alert("You guessed too low, sorry!"); // alert for low guess
+                } else {
+                    alert("Invalid input"); // alert for invalid input
+                }
+            }
+
+            if (correctGuess) {
+                alert("Congratulations! You've made the correct guess!");
+                document.write("Congratulations, you guessed correctly!");
+            } else {
+                document.write("Sorry, you didn't guess correctly. The number was " + x + ".");
+            }
+
+            var choice = prompt("Press Y to play again; Press N to exit").toUpperCase();
+
+            if (choice == "Y") {
+                location.reload(); // Reload the page to start over
+            } else {
+                document.write("<br>Thank you for playing!");
+            }
+        }
+
+        playagain();
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html>
